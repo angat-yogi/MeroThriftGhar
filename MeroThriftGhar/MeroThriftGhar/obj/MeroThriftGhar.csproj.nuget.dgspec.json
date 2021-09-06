@@ -4,6 +4,189 @@
     "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj",
+        "projectName": "MeroThriftGhar.DataAccess",
+        "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Angat Yogi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Angat Yogi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj": {
+                "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj"
+              },
+              "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj": {
+                "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj",
+        "projectName": "MeroThriftGhar.Models",
+        "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj",
+        "packagesPath": "C:\\Users\\Angat Yogi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Angat Yogi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj",
+        "projectName": "MeroThriftGhar.Utility",
+        "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj",
+        "packagesPath": "C:\\Users\\Angat Yogi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Angat Yogi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +210,17 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj"
+              },
+              "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj": {
+                "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj"
+              },
+              "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj": {
+                "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

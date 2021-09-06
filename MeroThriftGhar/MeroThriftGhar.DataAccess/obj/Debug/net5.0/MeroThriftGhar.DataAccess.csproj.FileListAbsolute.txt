@@ -1,0 +1,12 @@
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.DataAccess.deps.json
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.DataAccess.dll
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\ref\MeroThriftGhar.DataAccess.dll
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.DataAccess.pdb
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.AssemblyInfo.cs
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.dll
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\ref\MeroThriftGhar.DataAccess.dll
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.pdb

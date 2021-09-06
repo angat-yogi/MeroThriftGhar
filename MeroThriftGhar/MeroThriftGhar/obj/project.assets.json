@@ -1857,6 +1857,43 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "MeroThriftGhar.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MeroThriftGhar.Models": "1.0.0",
+          "MeroThriftGhar.Utility": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.9",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.9",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
+        },
+        "compile": {
+          "bin/placeholder/MeroThriftGhar.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MeroThriftGhar.DataAccess.dll": {}
+        }
+      },
+      "MeroThriftGhar.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MeroThriftGhar.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MeroThriftGhar.Models.dll": {}
+        }
+      },
+      "MeroThriftGhar.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MeroThriftGhar.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MeroThriftGhar.Utility.dll": {}
+        }
       }
     }
   },
@@ -6707,10 +6744,28 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "MeroThriftGhar.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../MeroThriftGhar.DataAccess/MeroThriftGhar.DataAccess.csproj",
+      "msbuildProject": "../MeroThriftGhar.DataAccess/MeroThriftGhar.DataAccess.csproj"
+    },
+    "MeroThriftGhar.Models/1.0.0": {
+      "type": "project",
+      "path": "../MeroThriftGhar.Models/MeroThriftGhar.Models.csproj",
+      "msbuildProject": "../MeroThriftGhar.Models/MeroThriftGhar.Models.csproj"
+    },
+    "MeroThriftGhar.Utility/1.0.0": {
+      "type": "project",
+      "path": "../MeroThriftGhar.Utility/MeroThriftGhar.Utility.csproj",
+      "msbuildProject": "../MeroThriftGhar.Utility/MeroThriftGhar.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MeroThriftGhar.DataAccess >= 1.0.0",
+      "MeroThriftGhar.Models >= 1.0.0",
+      "MeroThriftGhar.Utility >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.9",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.9",
       "Microsoft.AspNetCore.Identity.UI >= 5.0.9",
@@ -6745,7 +6800,17 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj"
+            },
+            "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj": {
+              "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Models\\MeroThriftGhar.Models.csproj"
+            },
+            "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj": {
+              "projectPath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.Utility\\MeroThriftGhar.Utility.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

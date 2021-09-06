@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeroThriftGhar", "MeroThriftGhar\MeroThriftGhar.csproj", "{B7D56C17-481A-4318-A8AE-BD536ED9F9B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeroThriftGhar.DataAccess", "MeroThriftGhar.DataAccess\MeroThriftGhar.DataAccess.csproj", "{DFD56D65-8D5E-4C70-9972-42502A64D613}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeroThriftGhar.Models", "MeroThriftGhar.Models\MeroThriftGhar.Models.csproj", "{86F34415-2A30-4D9B-BB8A-60CDFCE28207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeroThriftGhar.Utility", "MeroThriftGhar.Utility\MeroThriftGhar.Utility.csproj", "{613B2CC6-B80C-4388-A00F-AA1AC9E7A70F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{B7D56C17-481A-4318-A8AE-BD536ED9F9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7D56C17-481A-4318-A8AE-BD536ED9F9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7D56C17-481A-4318-A8AE-BD536ED9F9B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD56D65-8D5E-4C70-9972-42502A64D613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD56D65-8D5E-4C70-9972-42502A64D613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD56D65-8D5E-4C70-9972-42502A64D613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD56D65-8D5E-4C70-9972-42502A64D613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F34415-2A30-4D9B-BB8A-60CDFCE28207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F34415-2A30-4D9B-BB8A-60CDFCE28207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F34415-2A30-4D9B-BB8A-60CDFCE28207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F34415-2A30-4D9B-BB8A-60CDFCE28207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613B2CC6-B80C-4388-A00F-AA1AC9E7A70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613B2CC6-B80C-4388-A00F-AA1AC9E7A70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613B2CC6-B80C-4388-A00F-AA1AC9E7A70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613B2CC6-B80C-4388-A00F-AA1AC9E7A70F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

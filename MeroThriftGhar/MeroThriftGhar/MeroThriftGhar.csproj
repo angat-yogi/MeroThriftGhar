@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MeroThriftGhar.DataAccess\MeroThriftGhar.DataAccess.csproj" />
+    <ProjectReference Include="..\MeroThriftGhar.Models\MeroThriftGhar.Models.csproj" />
+    <ProjectReference Include="..\MeroThriftGhar.Utility\MeroThriftGhar.Utility.csproj" />
+  </ItemGroup>
+
 </Project>
