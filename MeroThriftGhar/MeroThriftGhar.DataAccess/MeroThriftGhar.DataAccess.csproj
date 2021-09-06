@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MeroThriftGhar.Models\MeroThriftGhar.Models.csproj" />
     <ProjectReference Include="..\MeroThriftGhar.Utility\MeroThriftGhar.Utility.csproj" />
   </ItemGroup>

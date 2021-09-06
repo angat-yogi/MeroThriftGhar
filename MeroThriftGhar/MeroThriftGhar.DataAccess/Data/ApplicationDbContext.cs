@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MeroThriftGhar.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
