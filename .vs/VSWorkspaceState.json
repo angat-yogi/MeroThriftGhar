@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MeroThriftGhar",
+    "\\MeroThriftGhar\\MeroThriftGhar.DataAccess",
+    "\\MeroThriftGhar\\MeroThriftGhar.Utility"
   ],
-  "SelectedNode": "\\C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar",
   "PreviewInSolutionExplorer": false
 }

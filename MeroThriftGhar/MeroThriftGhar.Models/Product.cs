@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -45,6 +46,7 @@ namespace MeroThriftGhar.Models
         public int CoverTypeId { get; set; }
         [ForeignKey("CoverTypeId")]
         public CoverType CoverType { get; set; }
-
+        //public Product Product { get; set; }
+       // public IEnumerable<SelectListItem> CategoryList { get; set; }
     }
 }
