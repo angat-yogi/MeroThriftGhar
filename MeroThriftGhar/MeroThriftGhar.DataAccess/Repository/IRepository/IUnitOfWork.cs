@@ -11,6 +11,7 @@ namespace MeroThriftGhar.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
         ICoverTypeRepository CoverType { get; }
         IProductRepository Product { get; }
+        IApplicationUserRepository ApplicationUser { get; }
         ISP_Call SP_Call { get; }
 
         void Save();
