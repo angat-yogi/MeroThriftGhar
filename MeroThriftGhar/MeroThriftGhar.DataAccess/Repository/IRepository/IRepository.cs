@@ -16,7 +16,7 @@ namespace MeroThriftGhar.DataAccess.Repository.IRepository
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             string includeProperties = null
             );
-        T GetAllOrDefault(
+        T GetFirstOrDefault(
             Expression<Func<T, bool>> filter = null,
             string includeProperties = null
             );

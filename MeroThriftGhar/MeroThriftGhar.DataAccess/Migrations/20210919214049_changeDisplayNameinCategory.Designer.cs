@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MeroThriftGhar.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210913181630_addValidationToProduct1")]
-    partial class addValidationToProduct1
+    [Migration("20210919214049_changeDisplayNameinCategory")]
+    partial class changeDisplayNameinCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

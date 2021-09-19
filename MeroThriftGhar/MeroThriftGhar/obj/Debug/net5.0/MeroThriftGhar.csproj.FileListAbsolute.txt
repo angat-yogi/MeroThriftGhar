@@ -456,3 +456,4 @@ C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar\
 C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
+C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\Upsert.cshtml.g.cs

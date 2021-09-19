@@ -53,7 +53,7 @@ namespace MeroThriftGhar.DataAccess.Repository
             return query.ToList();
         }
 
-        public T GetAllOrDefault(Expression<Func<T, bool>> filter = null, string includeProperties = null)
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter = null, string includeProperties = null)
         {
             IQueryable<T> query = dbSet;
             if (filter != null)
