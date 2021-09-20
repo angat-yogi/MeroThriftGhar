@@ -34,7 +34,7 @@ namespace MeroThriftGhar
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options=>options.SignIn.RequireConfirmedAccount=true) //Added at the time of UnitOfWork
+            services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders() //Added at the time of UnitOfWork
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
