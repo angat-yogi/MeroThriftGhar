@@ -1,15 +1,18 @@
 using MeroThriftGhar.DataAccess.Data;
 using MeroThriftGhar.DataAccess.Repository;
 using MeroThriftGhar.DataAccess.Repository.IRepository;
+using MeroThriftGhar.Utility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,9 +39,34 @@ namespace MeroThriftGhar
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders() //Added at the time of UnitOfWork
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddSingleton<IEmailSender,EmailSender>();
+            services.Configure<EmailOptions>(Configuration);
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = $"/Identity/Account/Login";
+                options.LogoutPath = $"/Identity/Account/Logout";
+                options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+            });
+            services.AddAuthentication().AddFacebook(options =>
+            {
+                options.AppId = "387990402704621";
+                options.AppSecret = "6e41e3e99c9aa296a11ff8b9b8061c01";
+            });
+            services.AddAuthentication().AddGoogle(options =>
+            {
+                options.ClientId = "959185333805-9tn9segidrv8kbiqvv7726e4kp2u14jc.apps.googleusercontent.com";
+                options.ClientSecret = "J_Yy80Tu-hsY8gUs7hDPWBf1";
+            });
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,7 +87,8 @@ namespace MeroThriftGhar
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
+            app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
 

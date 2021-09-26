@@ -20,6 +20,8 @@ namespace MeroThriftGhar.Models
         public string ItemCode { get; set; }
         [Required]
         public string Brand { get; set; }
+        //[Required]
+        //public string Seller { get; set; }
         [Required]
         [Range(1, 10000)]
         public double ListPrice { get; set; }
@@ -45,5 +47,6 @@ namespace MeroThriftGhar.Models
 
         [ForeignKey("CoverTypeId")]
         public CoverType CoverType { get; set; }
+       // public double Ratings { get; set; }
     }
 }

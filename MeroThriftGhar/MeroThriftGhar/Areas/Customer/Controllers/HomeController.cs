@@ -1,12 +1,16 @@
 ﻿using MeroThriftGhar.DataAccess.Repository.IRepository;
 using MeroThriftGhar.Models;
 using MeroThriftGhar.Models.ViewModels;
+using MeroThriftGhar.Utility;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MeroThriftGhar.Areas.Customer.Controllers
@@ -27,6 +31,77 @@ namespace MeroThriftGhar.Areas.Customer.Controllers
         {
             IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
             return View(productList);
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            if (claim!=null)
+            {
+                var count = _unitOfWork.ShoppingCart.
+                   GetAll(c => c.ApplicationUserId == claim.Value)
+                   .ToList().Count();
+
+                HttpContext.Session.SetInt32(SD.ssShoppingCart, count);
+            }
+        }
+
+        public IActionResult Details(int id)
+        {
+            var productFromDb = _unitOfWork.Product.
+                GetFirstOrDefault(u => u.Id == id, includeProperties: "Category,CoverType");
+            ShoppingCart cartObj = new ShoppingCart()
+            {
+                Product = productFromDb,
+                ProductId=productFromDb.Id
+            };
+            return View(cartObj);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public IActionResult Details(ShoppingCart CartObj)
+        {
+            CartObj.Id = 0;
+            if (ModelState.IsValid)
+            {
+                //then we will add to cart
+                var claimsIdentity = (ClaimsIdentity)User.Identity;
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                CartObj.ApplicationUserId = claim.Value;
+                ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
+                    u => u.ApplicationUserId == CartObj.ApplicationUserId && u.ProductId == CartObj.ProductId,
+                    includeProperties: "Product"
+                    );
+                if (cartFromDb==null)
+                {
+                    //no records exists in database for that product for that user
+                    _unitOfWork.ShoppingCart.Add(CartObj);
+                }
+                else
+                {
+                    cartFromDb.Count += CartObj.Count;
+                   // _unitOfWork.ShoppingCart.Update(cartFromDb); // not needed as Save() method automatically updates
+                }
+                _unitOfWork.Save();
+
+                var count = _unitOfWork.ShoppingCart.
+                    GetAll(c => c.ApplicationUserId == CartObj.ApplicationUserId)
+                    .ToList().Count();
+                //HttpContext.Session.SetObject(SD.ssShoppingCart, CartObj);
+                HttpContext.Session.SetInt32(SD.ssShoppingCart, count);
+                
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                var productFromDb = _unitOfWork.Product.
+                GetFirstOrDefault(u => u.Id == CartObj.ProductId, includeProperties: "Category,CoverType");
+                ShoppingCart cartObj = new ShoppingCart()
+                {
+                    Product = productFromDb,
+                    ProductId = productFromDb.Id
+                };
+                return View(cartObj);
+            }
+            
         }
 
         public IActionResult Privacy()
