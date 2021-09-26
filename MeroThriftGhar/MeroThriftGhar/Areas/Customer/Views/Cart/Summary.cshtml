@@ -13,7 +13,7 @@
                         <i class="fa fa-shopping-cart"></i> &nbsp;
                         Order Summary
                     </div>
-                    <div class="col-6 text-right">
+                    <div class="col-6 text-end">
                         <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="btn btn-outline-info btn-sm">Back to Cart</a>
                     </div>
                 </div>
@@ -115,6 +115,7 @@
                             @{
                                 var OrderTotalForStripe = Model.OrderHeader.OrderTotal * 100;
                             }
+                           
                                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                         data-key="@Stripe.Value.PublishableKey"
                                         data-amount="@OrderTotalForStripe"
@@ -129,7 +130,7 @@
                                     document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
                                 </script>
                                 <button type="submit" value="Place Order" class="btn btn-success form-control">Place Order</button>
-                           
+                            
                         </div>
                     </div>
                 </div>

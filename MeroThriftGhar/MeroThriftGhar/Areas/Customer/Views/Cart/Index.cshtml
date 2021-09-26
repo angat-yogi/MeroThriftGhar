@@ -7,13 +7,13 @@
 
         <div class="backgroundWhiteBorder">
             <div class="container">
-                <div class="card">
+                <div class="card container">
                     <div class="card-header bg-dark text-light ml-0 row container">
                         <div class="col-6">
                             <i class="fa fa-shopping-cart"></i> &nbsp;
                             Shopping Cart
                         </div>
-                        <div class="col-6 text-right">
+                        <div class="col-6 text-end">
                             <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn-outline-info btn-sm">Continue Shopping</a>
                         </div>
                     </div>
@@ -38,8 +38,7 @@
                                             <a asp-action="plus" asp-route-cartId="@item.Id" class="btn btn-primary">
                                                 <i class="fas fa-plus"></i>
                                             </a>
-                                        </div>
-                                        <div class="float-right mx-1">
+                                        
                                             <button asp-action="minus" asp-route-cartId="@item.Id" class="btn btn-danger">
                                                 <i class="fas fa-minus"></i>
                                             </button>
