@@ -195,8 +195,6 @@ namespace MeroThriftGhar.Areas.Customer.Controllers
 
             _unitOfWork.OrderHeader.Add(ShoppingCartVM.OrderHeader);
             _unitOfWork.Save();
-
-            List<OrderDetails> orderDetailsList = new List<OrderDetails>();
             foreach (var item in ShoppingCartVM.ListCart)
             {
                 item.Price = SD.GetPriceBasedOnQuantity(item.Count, item.Product.Price,
@@ -217,15 +215,15 @@ namespace MeroThriftGhar.Areas.Customer.Controllers
             _unitOfWork.Save();
             HttpContext.Session.SetInt32(SD.ssShoppingCart, 0);
 
-            //if (stripeToken == null)
-            //{
-            //    //order will be created for delayed payment for authroized company
-            //    ShoppingCartVM.OrderHeader.PaymentDueDate = DateTime.Now.AddDays(30);
-            //    ShoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusDelayedPayment;
-            //    ShoppingCartVM.OrderHeader.OrderStatus = SD.StatusApproved;
-            //}
-            //else
-            //{
+            if (stripeToken == null)
+            {
+                //order will be created for delayed payment for authroized company
+                ShoppingCartVM.OrderHeader.PaymentDueDate = DateTime.Now.AddDays(30);
+                //ShoppingCartVM.OrderHeader.PaymentStatus = SD.PaymentStatusDelayedPayment;
+                ShoppingCartVM.OrderHeader.OrderStatus = SD.StatusApproved;
+            }
+            else
+            {
                 //process the payment
                 var options = new ChargeCreateOptions
                 {
@@ -252,7 +250,7 @@ namespace MeroThriftGhar.Areas.Customer.Controllers
                     ShoppingCartVM.OrderHeader.OrderStatus = SD.StatusApproved;
                     ShoppingCartVM.OrderHeader.PaymentDate = DateTime.Now;
                 }
-            //}
+            }
 
             _unitOfWork.Save();
 

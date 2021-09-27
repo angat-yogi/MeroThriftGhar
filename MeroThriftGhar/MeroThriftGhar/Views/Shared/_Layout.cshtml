@@ -42,8 +42,9 @@
                                 </div>
                             </li>
                         }
-                        @if (User.IsInRole(SD.Role_Employee) || User.IsInRole(SD.Role_Admin)) { 
-                        
+                        @if (User.IsInRole(SD.Role_Employee) || User.IsInRole(SD.Role_Admin))
+                        {
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Users
@@ -54,11 +55,14 @@
                                 </div>
                             </li>
                         }
-                        @if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.ssShoppingCart)!=null)
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Admin" asp-controller="Order" asp-action="Index">Orders</a>
+                        </li>
+                        @if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.ssShoppingCart) != null)
                         {
                             <li style="color:white;">
                                 <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="nav-link">
-                                    @{ 
+                                    @{
                                         var count = HttpContextAccessor.HttpContext.Session.GetInt32(SD.ssShoppingCart);
                                     }
                                     <i class="fas fa-shopping-cart"></i>&nbsp; (@count)
@@ -67,11 +71,11 @@
                         }
                         else
                         {
-                    <li style="color:white;">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-shopping-cart"></i>&nbsp; (0)
-                        </a>
-                    </li>
+                            <li style="color:white;">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-shopping-cart"></i>&nbsp; (0)
+                                </a>
+                            </li>
                         }
                     </ul>
                     <partial name="_LoginPartial" />

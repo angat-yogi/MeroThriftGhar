@@ -69,6 +69,7 @@
                                     <div class="col-9">
                                         <input asp-for="OrderHeader.State" type="text" class="form-control" />
                                         <span asp-validation-for="OrderHeader.State" class="text-danger"></span>
+                                        
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -115,22 +116,30 @@
                             @{
                                 var OrderTotalForStripe = Model.OrderHeader.OrderTotal * 100;
                             }
-                           
-                                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                        data-key="@Stripe.Value.PublishableKey"
-                                        data-amount="@OrderTotalForStripe"
-                                        data-name="Mero Thrift Ghar"
-                                        data-label="Place Order"
-                                        data-description="Thrift For Less, Save More"
-                                        data-locale="auto"
-                                        data-allow-remember-me="false"
-                                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png">
-                                </script>
-                                <script>
-                                    document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-                                </script>
-                                <button type="submit" value="Place Order" class="btn btn-success form-control">Place Order</button>
-                            
+
+                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                    data-key="@Stripe.Value.PublishableKey"
+                                    data-amount="@OrderTotalForStripe"
+                                    data-name="Mero Thrift Ghar"
+                                    data-label="Place Order"
+                                    data-description="Thrift For Less, Save More"
+                                    data-locale="auto"
+                                    data-allow-remember-me="false"
+                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png">
+                            </script>
+                            <script>
+                                //document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+                                document.getElementsByClassName("stripe-button-el")[0].disabled = true;
+
+                                function validateForm() {
+                                    // if anything is empty
+                                    document.getElementsByClassName("stripe-button-el")[0].disabled = false;
+                                    return false;
+                                }
+
+                            </script>
+                            <button type="submit" value="Place Order" class="btn btn-success form-control" onsubmit="return validateForm()">Place Order</button>
+
                         </div>
                     </div>
                 </div>
