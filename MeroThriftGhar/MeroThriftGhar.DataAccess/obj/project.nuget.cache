@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uQQ35tda1dnM0l6s0NAurU+Z/9ZByJnfdCL9JQLZrO1XNM1pxa5Ybh3qzlHUfoINYdL9GMABy9hrgt227joxzQ==",
+  "dgSpecHash": "f3trha4vFVQLlv0aETySoTXO1YMY29Es5McD+0rdgwNBnnp19AquSE9EwgHfLGneew2RqKw2XNN26vik4/CmjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.DataAccess\\MeroThriftGhar.DataAccess.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Angat Yogi\\.nuget\\packages\\braintree\\5.9.0\\braintree.5.9.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -177,7 +178,9 @@
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
+    "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

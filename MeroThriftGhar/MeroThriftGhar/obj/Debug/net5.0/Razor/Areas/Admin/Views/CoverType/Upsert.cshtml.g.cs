@@ -27,7 +27,7 @@ using MeroThriftGhar.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eeed00542fbefb5f272bad349cc01a4e6e5ab032", @"/Areas/Admin/Views/CoverType/Upsert.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"63d9f3445c6e5598c5d68ba15b55a61edad34aab", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e39dc70ed93846d022ded21eaa68b2e7b1302de7", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_CoverType_Upsert : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MeroThriftGhar.Models.CoverType>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

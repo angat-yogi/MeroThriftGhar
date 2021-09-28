@@ -1,22 +1,24 @@
-using MeroThriftGhar.DataAccess.Data;
-using MeroThriftGhar.DataAccess.Repository;
-using MeroThriftGhar.DataAccess.Repository.IRepository;
-using MeroThriftGhar.Utility;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using MeroThriftGhar.DataAccess.Data;
+using MeroThriftGhar.DataAccess.Repository.IRepository;
+using MeroThriftGhar.DataAccess.Repository;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using MeroThriftGhar.Utility;
+using Stripe;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+//using MeroThriftGhar.DataAccess.Initializer;
 
 namespace MeroThriftGhar
 {
@@ -35,15 +37,18 @@ namespace MeroThriftGhar
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDatabaseDeveloperPageExceptionFilter();
-
-            services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders() //Added at the time of UnitOfWork
+            services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddSingleton<IEmailSender,EmailSender>();
+            services.AddSingleton<IEmailSender, EmailSender>();
+            services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+
             services.Configure<EmailOptions>(Configuration);
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
+            services.Configure<BrainTreeSettings>(Configuration.GetSection("BrainTree"));
             services.Configure<TwilioSettings>(Configuration.GetSection("Twilio"));
+            services.AddSingleton<IBrainTreeGate, BrainTreeGate>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //services.AddScoped<IDbInitializer, DbInitializer>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
             services.ConfigureApplicationCookie(options =>
@@ -71,12 +76,13 @@ namespace MeroThriftGhar
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+       // public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseMigrationsEndPoint();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -92,13 +98,12 @@ namespace MeroThriftGhar
             app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
-
+            //dbInitializer.Initialize();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
-                    
                 endpoints.MapRazorPages();
             });
         }

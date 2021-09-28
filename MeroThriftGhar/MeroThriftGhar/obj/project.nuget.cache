@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qlAkVmgFeT2q+t0rzKIEbLd+YAzJopXYjU+kwMeQDG4GY7Zsi8WxGAmdUCec0UR9TcAXAnlUaE0rWlbe+2c8TQ==",
+  "dgSpecHash": "rA0LnHbazFUP/mOqghR59WA/TDBFjBWoFoRqKncof0fdbVfiUqj7GU7ZdlFKCNSqHoG2ptr3Pbfrcn/xCjmV4g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Angat Yogi\\Desktop\\GitHub\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar\\MeroThriftGhar.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Angat Yogi\\.nuget\\packages\\braintree\\5.9.0\\braintree.5.9.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
@@ -212,6 +213,8 @@
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
+    "C:\\Users\\Angat Yogi\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Angat Yogi\\.nuget\\packages\\twilio\\5.65.3\\twilio.5.65.3.nupkg.sha512"
   ],
   "logs": []
