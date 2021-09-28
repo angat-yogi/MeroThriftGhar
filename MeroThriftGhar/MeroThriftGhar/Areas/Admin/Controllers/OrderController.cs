@@ -42,49 +42,49 @@ namespace MeroThriftGhar.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        //[ActionName("Details")]
-        //public IActionResult Details(string stripeToken)
-        //{
-        //    OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == OrderVM.OrderHeader.Id,
-        //                                        includeProperties: "ApplicationUser");
-        //    if (stripeToken != null)
-        //    {
-        //        //process the payment
-        //        var options = new ChargeCreateOptions
-        //        {
-        //            Amount = Convert.ToInt32(orderHeader.OrderTotal * 100),
-        //            Currency = "usd",
-        //            Description = "Order ID : " + orderHeader.Id,
-        //            Source = stripeToken
-        //        };
+        [ValidateAntiForgeryToken]
+        [ActionName("Details")]
+        public IActionResult Details(string stripeToken)
+        {
+            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == OrderVM.OrderHeader.Id,
+                                                includeProperties: "ApplicationUser");
+            if (stripeToken != null)
+            {
+                //process the payment
+                var options = new ChargeCreateOptions
+                {
+                    Amount = Convert.ToInt32(orderHeader.OrderTotal * 100),
+                    Currency = "usd",
+                    Description = "Order ID : " + orderHeader.Id,
+                    Source = stripeToken
+                };
 
-        //        var service = new ChargeService();
-        //        Charge charge = service.Create(options);
+                var service = new ChargeService();
+                Charge charge = service.Create(options);
 
-        //        if (charge.Id == null)
-        //        {
-        //            orderHeader.PaymentStatus = SD.PaymentStatusRejected;
-        //        }
-        //        else
-        //        {
-        //            orderHeader.TransactionId = charge.Id;
-        //        }
-        //        if (charge.Status.ToLower() == "succeeded")
-        //        {
-        //            orderHeader.PaymentStatus = SD.PaymentStatusApproved;
+                if (charge.Id == null)
+                {
+                    orderHeader.PaymentStatus = SD.PaymentStatusRejected;
+                }
+                else
+                {
+                    orderHeader.TransactionId = charge.Id;
+                }
+                if (charge.Status.ToLower() == "succeeded")
+                {
+                    orderHeader.PaymentStatus = SD.PaymentStatusApproved;
 
-        //            orderHeader.PaymentDate = DateTime.Now;
-        //        }
+                    orderHeader.PaymentDate = DateTime.Now;
+                }
 
-        //        _unitOfWork.Save();
+                _unitOfWork.Save();
 
-        //    }
-        //    return RedirectToAction("Details", "Order", new { id = orderHeader.Id });
-        //}
+            }
+            return RedirectToAction("Details", "Order", new { id = orderHeader.Id });
+        }
 
 
-        [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
+            [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
         public IActionResult StartProcessing(int id)
         {
             OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
@@ -93,48 +93,48 @@ namespace MeroThriftGhar.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpPost]
-        //[Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
-        //public IActionResult ShipOrder()
-        //{
-        //    OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == OrderVM.OrderHeader.Id);
-        //    orderHeader.TrackingNumber = OrderVM.OrderHeader.TrackingNumber;
-        //    orderHeader.Carrier = OrderVM.OrderHeader.Carrier;
-        //    orderHeader.OrderStatus = SD.StatusShipped;
-        //    orderHeader.ShippingDate = DateTime.Now;
+            [HttpPost]
+            [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
+            public IActionResult ShipOrder()
+            {
+                OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == OrderVM.OrderHeader.Id);
+                orderHeader.TrackingNumber = OrderVM.OrderHeader.TrackingNumber;
+                orderHeader.Carrier = OrderVM.OrderHeader.Carrier;
+                orderHeader.OrderStatus = SD.StatusShipped;
+                orderHeader.ShippingDate = DateTime.Now;
 
-        //    _unitOfWork.Save();
-        //    return RedirectToAction("Index");
-        //}
+                _unitOfWork.Save();
+                return RedirectToAction("Index");
+            }
 
-        //[Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
-        //public IActionResult CancelOrder(int id)
-        //{
-        //    OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
-        //    if (orderHeader.PaymentStatus == SD.StatusApproved)
-        //    {
-        //        var options = new RefundCreateOptions
-        //        {
-        //            Amount = Convert.ToInt32(orderHeader.OrderTotal * 100),
-        //            Reason = RefundReasons.RequestedByCustomer,
-        //            Charge = orderHeader.TransactionId
+        [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
+        public IActionResult CancelOrder(int id)
+        {
+            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
+            if (orderHeader.PaymentStatus == SD.StatusApproved)
+            {
+                var options = new RefundCreateOptions
+                {
+                    Amount = Convert.ToInt32(orderHeader.OrderTotal * 100),
+                    Reason = RefundReasons.RequestedByCustomer,
+                    Charge = orderHeader.TransactionId
 
-        //        };
-        //        var service = new RefundService();
-        //        Refund refund = service.Create(options);
+                };
+                var service = new RefundService();
+                Refund refund = service.Create(options);
 
-        //        orderHeader.OrderStatus = SD.StatusRefunded;
-        //        orderHeader.PaymentStatus = SD.StatusRefunded;
-        //    }
-        //    else
-        //    {
-        //        orderHeader.OrderStatus = SD.StatusCancelled;
-        //        orderHeader.PaymentStatus = SD.StatusCancelled;
-        //    }
+                orderHeader.OrderStatus = SD.StatusRefunded;
+                orderHeader.PaymentStatus = SD.StatusRefunded;
+            }
+            else
+            {
+                orderHeader.OrderStatus = SD.StatusCancelled;
+                orderHeader.PaymentStatus = SD.StatusCancelled;
+            }
 
-        //    _unitOfWork.Save();
-        //    return RedirectToAction("Index");
-        //}
+            _unitOfWork.Save();
+            return RedirectToAction("Index");
+        }
 
         //public IActionResult UpdateOrderDetails()
         //{
@@ -183,7 +183,7 @@ namespace MeroThriftGhar.Areas.Admin.Controllers
             switch (status)
             {
                 case "pending":
-                    orderHeaderList = orderHeaderList.Where(o => o.PaymentStatus == SD.PaymentStatusPending);
+                    orderHeaderList = orderHeaderList.Where(o => o.PaymentStatus == SD.PaymentStatusDelayedPayment);
                     break;
                 case "inprocess":
                     orderHeaderList = orderHeaderList.Where(o => o.OrderStatus == SD.StatusApproved ||

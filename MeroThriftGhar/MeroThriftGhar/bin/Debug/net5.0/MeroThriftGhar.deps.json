@@ -46,6 +46,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.9",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Stripe.net": "39.69.0",
+          "Twilio": "5.65.3",
           "Microsoft.AspNetCore.Antiforgery.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -2608,6 +2609,23 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Twilio/5.65.3": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.6.0",
+          "Newtonsoft.Json": "12.0.3",
+          "System.Collections.Specialized": "4.3.0",
+          "System.IdentityModel.Tokens.Jwt": "5.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Twilio.dll": {
+            "assemblyVersion": "5.65.3.0",
+            "fileVersion": "5.65.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Twilio.dll": {}
         }
       },
       "MeroThriftGhar.DataAccess/1.0.0": {
@@ -5769,6 +5787,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Twilio/5.65.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1CxUgiZBuTcXu3Fjce/cFxfCUj3X1DL8LnRg/NNUKGJE9/WhsYVU4X7qcdZzlsugDZv+v2Md5/95AYzfucKBpg==",
+      "path": "twilio/5.65.3",
+      "hashPath": "twilio.5.65.3.nupkg.sha512"
     },
     "MeroThriftGhar.DataAccess/1.0.0": {
       "type": "project",

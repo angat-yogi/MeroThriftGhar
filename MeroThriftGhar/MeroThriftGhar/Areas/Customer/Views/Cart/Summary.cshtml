@@ -31,8 +31,8 @@
                                         <label>Name</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="OrderHeader.Name" type="text" class="form-control" />
-                                        <span asp-validation-for="OrderHeader.Name" class="text-danger"></span>
+                                        <input asp-for="OrderHeader.Name" type="text" id="headername" class="form-control" />
+                                        @*<span asp-validation-for="OrderHeader.Name" class="text-danger"></span>*@
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -40,8 +40,8 @@
                                         <label>Phone</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="OrderHeader.PhoneNumber" type="text" class="form-control" />
-                                        <span asp-validation-for="OrderHeader.PhoneNumber" class="text-danger"></span>
+                                        <input asp-for="OrderHeader.PhoneNumber" type="text" id="phonenumber" class="form-control" />
+                                        @*<span asp-validation-for="OrderHeader.PhoneNumber" class="text-danger"></span>*@
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -49,8 +49,8 @@
                                         <label>Street Address</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="OrderHeader.StreetAddress" type="text" class="form-control" />
-                                        <span asp-validation-for="OrderHeader.StreetAddress" class="text-danger"></span>
+                                        <input asp-for="OrderHeader.StreetAddress" type="text" id="streetaddress" class="form-control"/>
+                                        @*<span asp-validation-for="OrderHeader.StreetAddress" class="text-danger"></span>*@
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -58,8 +58,8 @@
                                         <label>City</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="OrderHeader.City" type="text" class="form-control" />
-                                        <span asp-validation-for="OrderHeader.City" class="text-danger"></span>
+                                        <input asp-for="OrderHeader.City" type="text" id="headercity" class="form-control"/>
+                                        @*<span asp-validation-for="OrderHeader.City" class="text-danger"></span>*@
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -67,9 +67,9 @@
                                         <label>State</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="OrderHeader.State" type="text" class="form-control" />
+                                        <input asp-for="OrderHeader.State" type="text" id="headerstate" class="form-control" />
                                         <span asp-validation-for="OrderHeader.State" class="text-danger"></span>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="row my-1">
@@ -77,7 +77,7 @@
                                         <label>Postal Code</label>
                                     </div>
                                     <div class="col-9">
-                                        <input asp-for="OrderHeader.PostalCode" type="text" class="form-control" />
+                                        <input asp-for="OrderHeader.PostalCode" type="text" id="headerPC" class="form-control"/>
                                         <span asp-validation-for="OrderHeader.PostalCode" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -116,30 +116,22 @@
                             @{
                                 var OrderTotalForStripe = Model.OrderHeader.OrderTotal * 100;
                             }
-
                             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                     data-key="@Stripe.Value.PublishableKey"
                                     data-amount="@OrderTotalForStripe"
-                                    data-name="Mero Thrift Ghar"
+                                    data-name="Bulky Book"
                                     data-label="Place Order"
-                                    data-description="Thrift For Less, Save More"
+                                    data-description="Get Books, For Less"
                                     data-locale="auto"
                                     data-allow-remember-me="false"
                                     data-image="https://stripe.com/img/documentation/checkout/marketplace.png">
                             </script>
                             <script>
-                                //document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-                                document.getElementsByClassName("stripe-button-el")[0].disabled = true;
-
-                                function validateForm() {
-                                    // if anything is empty
-                                    document.getElementsByClassName("stripe-button-el")[0].disabled = false;
-                                    return false;
-                                }
-
+                               document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
                             </script>
-                            <button type="submit" value="Place Order" class="btn btn-success form-control" onsubmit="return validateForm()">Place Order</button>
+                            <button type="submit" value="Place Order" onclick="validateInput()" class="btn btn-success form-control">Place Order</button>
 
+                            @*<button type="submit" id="button" value="Place Order" class="btn btn-success form-control" disabled>Place Order</button>*@
                         </div>
                     </div>
                 </div>
@@ -148,5 +140,45 @@
     </div>
 </form>
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+<script>
+    function validateInput() {
+        var hname = document.getElementById("headername").value;
+        var hphonenumber = document.getElementById("phonenumber").value;
+        var hstreetaddress = document.getElementById("streetaddress").value;
+        var hcity = document.getElementById("headercity").value;
+        var hstate = document.getElementById("headerstate").value;
+        var hPC = document.getElementById("headerPC").value;
+
+        if (hname.toString()=='') {
+            swal("Error", "Please enter a name ")
+            return false;
+        }
+        else {
+            if (hphonenumber.toString() == '') {
+                swal("Error", "Please enter a phone number so we can call if there are any issues with delivery.")
+                return false;
+            }
+            else if (hstreetaddress.toString() == '') {
+                swal("Error", "Please enter a shipping address.")
+                return false;
+            }
+            else if (hcity.toString() == '') {
+                swal("Error", "Please enter a city name.")
+                return false;
+            }
+            else if (hstate.toString() == '') {
+                swal("Error", "Please enter a state name.")
+                return false;
+            }
+            else if (hPC.toString() == '') {
+                swal("Error", "Please enter a valid postal code.")
+                return false;
+            }
+            else {
+                return true;
+            }
+    }
+</script>
+
+
 }
