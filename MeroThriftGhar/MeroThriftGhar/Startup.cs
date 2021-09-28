@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using MeroThriftGhar.Utility;
 using Stripe;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-//using MeroThriftGhar.DataAccess.Initializer;
+using MeroThriftGhar.DataAccess.Initializer;
 
 namespace MeroThriftGhar
 {
@@ -48,9 +48,10 @@ namespace MeroThriftGhar
             services.Configure<TwilioSettings>(Configuration.GetSection("Twilio"));
             services.AddSingleton<IBrainTreeGate, BrainTreeGate>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<IDbInitializer, DbInitializer>();
+            services.AddScoped<IDbInitializer, DbInitializer>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
+
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = $"/Identity/Account/Login";
@@ -67,6 +68,7 @@ namespace MeroThriftGhar
                 options.ClientId = "959185333805-9tn9segidrv8kbiqvv7726e4kp2u14jc.apps.googleusercontent.com";
                 options.ClientSecret = "J_Yy80Tu-hsY8gUs7hDPWBf1";
             });
+         
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -76,8 +78,8 @@ namespace MeroThriftGhar
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-       // public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+       // public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -98,7 +100,7 @@ namespace MeroThriftGhar
             app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
-            //dbInitializer.Initialize();
+           dbInitializer.Initialize();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
