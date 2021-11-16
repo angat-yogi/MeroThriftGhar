@@ -10,5 +10,6 @@ namespace MeroThriftGhar.Models.ViewModels
     {
         public IEnumerable<ShoppingCart> ListCart { get; set; }
         public OrderHeader OrderHeader { get; set; }
+        public IEnumerable<ShippingAddress> ShippingAddresses { get; set; }
     }
 }

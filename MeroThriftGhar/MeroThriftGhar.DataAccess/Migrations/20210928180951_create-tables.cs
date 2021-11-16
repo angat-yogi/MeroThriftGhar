@@ -65,18 +65,6 @@ namespace MeroThriftGhar.DataAccess.Migrations
                     table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "CoverTypes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CoverTypes", x => x.Id);
-                });
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
@@ -235,7 +223,7 @@ namespace MeroThriftGhar.DataAccess.Migrations
                     Price100 = table.Column<double>(type: "float", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    CoverTypeId = table.Column<int>(type: "int", nullable: false)
+  
                 },
                 constraints: table =>
                 {
@@ -246,12 +234,7 @@ namespace MeroThriftGhar.DataAccess.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Products_CoverTypes_CoverTypeId",
-                        column: x => x.CoverTypeId,
-                        principalTable: "CoverTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                
                 });
 
             migrationBuilder.CreateTable(
@@ -369,11 +352,6 @@ namespace MeroThriftGhar.DataAccess.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_CoverTypeId",
-                table: "Products",
-                column: "CoverTypeId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ShoppingCarts_ApplicationUserId",
                 table: "ShoppingCarts",
                 column: "ApplicationUserId");
@@ -422,8 +400,6 @@ namespace MeroThriftGhar.DataAccess.Migrations
             migrationBuilder.DropTable(
                 name: "Categories");
 
-            migrationBuilder.DropTable(
-                name: "CoverTypes");
         }
     }
 }

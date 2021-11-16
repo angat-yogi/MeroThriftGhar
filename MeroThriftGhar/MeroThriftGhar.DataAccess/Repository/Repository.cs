@@ -22,6 +22,11 @@ namespace MeroThriftGhar.DataAccess.Repository
             this.dbSet = _db.Set<T>();
         }
 
+        public void Update(T entity)
+        {
+            dbSet.Update(entity);
+        }
+
         public void Add(T entity)
         {
             dbSet.Add(entity);

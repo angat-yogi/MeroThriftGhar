@@ -36,7 +36,6 @@ namespace MeroThriftGhar.DataAccess.Repository
                 objFromDb.Price100 = product.Price100;
                 objFromDb.Description = product.Description;
                 objFromDb.Brand = product.Brand;
-                objFromDb.CoverTypeId = product.CoverTypeId;
                 objFromDb.CategoryId = product.CategoryId;
 
 

@@ -42,11 +42,6 @@ namespace MeroThriftGhar.Models
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
-        [Required]
-        public int CoverTypeId { get; set; }
-
-        [ForeignKey("CoverTypeId")]
-        public CoverType CoverType { get; set; }
-       // public double Ratings { get; set; }
+    
     }
 }

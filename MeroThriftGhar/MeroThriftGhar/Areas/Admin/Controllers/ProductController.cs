@@ -42,11 +42,6 @@ namespace MeroThriftGhar.Areas.Admin.Controllers
                     Text = i.Name,
                     Value = i.Id.ToString(),
                 }),
-                CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
-                {
-                    Text = i.Name,
-                    Value = i.Id.ToString(),
-                })
             };
 
             if (id==null)
@@ -122,11 +117,6 @@ namespace MeroThriftGhar.Areas.Admin.Controllers
                     Text = i.Name,
                     Value = i.Id.ToString(),
                 });
-                productVM.CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
-                {
-                    Text = i.Name,
-                    Value = i.Id.ToString(),
-                });
 
                 if (productVM.Product.Id!=0)
                 {
@@ -140,7 +130,7 @@ namespace MeroThriftGhar.Areas.Admin.Controllers
 
         public IActionResult GetAll()
         {
-            var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category");
             return Json(new { data = allObj });
         }
         [HttpDelete]

@@ -15,3 +15,20 @@ C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.
 C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.Models.pdb
 C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.Utility.pdb
 C:\Users\Angat Yogi\Desktop\GitHub\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.csproj.CopyComplete
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.csproj.AssemblyReference.cache
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.AssemblyInfoInputs.cache
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.AssemblyInfo.cs
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.dll
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\ref\MeroThriftGhar.DataAccess.dll
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.pdb
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.DataAccess.deps.json
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.DataAccess.dll
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\ref\MeroThriftGhar.DataAccess.dll
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.DataAccess.pdb
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.Models.dll
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.Utility.dll
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.Models.pdb
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\bin\Debug\net5.0\MeroThriftGhar.Utility.pdb
+C:\Users\yogi0000\Source\Repos\angat-yogi\MeroThriftGhar\MeroThriftGhar\MeroThriftGhar.DataAccess\obj\Debug\net5.0\MeroThriftGhar.DataAccess.csproj.CopyComplete

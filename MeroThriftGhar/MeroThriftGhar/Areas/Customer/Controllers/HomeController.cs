@@ -29,7 +29,7 @@ namespace MeroThriftGhar.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
             return View(productList);
              var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
@@ -46,7 +46,7 @@ namespace MeroThriftGhar.Areas.Customer.Controllers
         public IActionResult Details(int id)
         {
             var productFromDb = _unitOfWork.Product.
-                GetFirstOrDefault(u => u.Id == id, includeProperties: "Category,CoverType");
+                GetFirstOrDefault(u => u.Id == id, includeProperties: "Category");
             ShoppingCart cartObj = new ShoppingCart()
             {
                 Product = productFromDb,
@@ -93,7 +93,7 @@ namespace MeroThriftGhar.Areas.Customer.Controllers
             else
             {
                 var productFromDb = _unitOfWork.Product.
-                GetFirstOrDefault(u => u.Id == CartObj.ProductId, includeProperties: "Category,CoverType");
+                GetFirstOrDefault(u => u.Id == CartObj.ProductId, includeProperties: "Category");
                 ShoppingCart cartObj = new ShoppingCart()
                 {
                     Product = productFromDb,
